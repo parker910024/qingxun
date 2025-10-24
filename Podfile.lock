@@ -1,0 +1,248 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - AgoraRtcEngine_iOS (3.0.0.43)
+  - AMapFoundation (1.6.9)
+  - AMapLocation (2.6.9):
+    - AMapFoundation (~> 1.6.8)
+  - AvoidCrash (2.5.2)
+  - BaiduMobStatCodeless (5.2.7)
+  - Bugly (2.5.93)
+  - CocoaAsyncSocket (7.6.5)
+  - DoraemonKit/Core (3.1.7):
+    - FMDB
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+  - FFPopup (1.1.5)
+  - FLAnimatedImage (1.0.17)
+  - FMDB (2.7.11):
+    - FMDB/standard (= 2.7.11)
+  - FMDB/standard (2.7.11)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
+  - HBDNavigationBar (1.7.7)
+  - IQKeyboardManager (6.5.19)
+  - JXCategoryView (1.5.9)
+  - JXPagingView/Pager (1.1.19)
+  - LinkedME_LinkPage (1.5.5.4)
+  - LookinServer (1.2.8):
+    - LookinServer/Core (= 1.2.8)
+  - LookinServer/Core (1.2.8)
+  - M80AttributedLabel (1.9.9)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.4.3)
+  - mob_sharesdk (4.3.17):
+    - mob_sharesdk/ShareSDK (= 4.3.17)
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDK (4.3.17):
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKExtension (4.3.17):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/Apple (4.3.17):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/QQ (4.3.17):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - mob_sharesdk/ShareSDKPlatforms/WeChat (4.3.17):
+    - mob_sharesdk/ShareSDK
+    - MOBFoundation (>= 3.2.9)
+  - MOBFoundation (3.2.70)
+  - MZTimerLabel (0.5.4)
+  - NIMSDK_LITE (7.7.4)
+  - pop (1.0.12)
+  - Protobuf (3.11.4)
+  - Qiniu (7.3.5)
+  - ReactiveObjC (3.1.1)
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
+  - SZTextView (1.3.0)
+  - Toast (4.0.0)
+  - TYAlertController (1.2.0)
+  - TZImagePickerController (3.3.2)
+  - UICountingLabel (1.2.0)
+  - UMCCommon (7.1.3)
+  - UMCPush (3.2.5):
+    - UMCCommon
+  - WCDB.objc (2.1.14):
+    - WCDBOptimizedSQLCipher (= 1.4.7)
+  - WCDBOptimizedSQLCipher (1.4.7)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - AFNetworking (~> 4.0.1)
+  - AgoraRtcEngine_iOS (~> 3.0.0.1)
+  - AMapFoundation (~> 1.6.3)
+  - AMapLocation (~> 2.6.5)
+  - AvoidCrash (~> 2.5.2)
+  - BaiduMobStatCodeless (~> 5.2.5)
+  - Bugly (~> 2.5.2)
+  - CocoaAsyncSocket
+  - DoraemonKit/Core
+  - FFPopup (~> 1.1.0)
+  - FLAnimatedImage (~> 1.0.12)
+  - HBDNavigationBar (~> 1.7.5)
+  - IQKeyboardManager (~> 6.5.5)
+  - JXCategoryView (~> 1.5.5)
+  - JXPagingView/Pager (~> 1.1.19)
+  - LinkedME_LinkPage (~> 1.5.5.1)
+  - LookinServer
+  - M80AttributedLabel (~> 1.9.9)
+  - Masonry
+  - MBProgressHUD (~> 1.2.0)
+  - MJRefresh (~> 3.4.1)
+  - mob_sharesdk (~> 4.3.9)
+  - mob_sharesdk/ShareSDKExtension
+  - mob_sharesdk/ShareSDKPlatforms/Apple
+  - mob_sharesdk/ShareSDKPlatforms/QQ
+  - mob_sharesdk/ShareSDKPlatforms/WeChat
+  - MOBFoundation (~> 3.2.13)
+  - MZTimerLabel (~> 0.5.4)
+  - NIMSDK_LITE (~> 7.7.0)
+  - pop (~> 1.0.12)
+  - Protobuf (~> 3.11.4)
+  - Qiniu (~> 7.3.2)
+  - ReactiveObjC (~> 3.1.1)
+  - SDWebImage (~> 4.4.8)
+  - SZTextView (~> 1.3.0)
+  - Toast (~> 4.0.0)
+  - TYAlertController
+  - TZImagePickerController (~> 3.3.1)
+  - UICountingLabel (~> 1.2.0)
+  - UMCCommon (= 7.1.3)
+  - UMCPush (~> 3.2.4)
+  - WCDB.objc
+  - YYModel (~> 1.0.4)
+  - YYText (~> 1.0.7)
+  - YYWebImage (~> 1.0.5)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - AgoraRtcEngine_iOS
+    - AMapFoundation
+    - AMapLocation
+    - AvoidCrash
+    - BaiduMobStatCodeless
+    - Bugly
+    - CocoaAsyncSocket
+    - DoraemonKit
+    - FFPopup
+    - FLAnimatedImage
+    - FMDB
+    - GCDWebServer
+    - HBDNavigationBar
+    - IQKeyboardManager
+    - JXCategoryView
+    - JXPagingView
+    - LinkedME_LinkPage
+    - LookinServer
+    - M80AttributedLabel
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - mob_sharesdk
+    - MOBFoundation
+    - MZTimerLabel
+    - NIMSDK_LITE
+    - pop
+    - Protobuf
+    - Qiniu
+    - ReactiveObjC
+    - SDWebImage
+    - SZTextView
+    - Toast
+    - TYAlertController
+    - TZImagePickerController
+    - UICountingLabel
+    - UMCCommon
+    - UMCPush
+    - WCDB.objc
+    - WCDBOptimizedSQLCipher
+    - YYCache
+    - YYImage
+    - YYModel
+    - YYText
+    - YYWebImage
+
+SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  AgoraRtcEngine_iOS: 5e0638c1b1ed2c2b2bc6d74e74f97dee4b1b0554
+  AMapFoundation: 8d8ecbb0b2e9ce5487995360d26c885d94642bfd
+  AMapLocation: 3ec0e9bf53800b40cceb313cbd047743f75e2483
+  AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
+  BaiduMobStatCodeless: 09c3738fd435a6c13c248f39aa0f15d3f5ee7daa
+  Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  DoraemonKit: 0b45c9dc6ab34bd426a2782ee1bf7ab13492a60b
+  FFPopup: a208dcee8db3e54ec4a88fcd6481f6f5d85b7a83
+  FLAnimatedImage: bbf914596368867157cc71b38a8ec834b3eeb32b
+  FMDB: 57486c1117fd8e0e6b947b2f54c3f42bf8e57a4e
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  HBDNavigationBar: 6ba38b99637039c831ce460364d5398f29fa0685
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
+  JXPagingView: d28c0e245b850cdb47e3f04c07d8c35e30c18531
+  LinkedME_LinkPage: 0b443cec28582eb2d7e1c09987072e33e44083ec
+  LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
+  M80AttributedLabel: 77fedfe63804c989a6de0fa4d400ea8cad3ab441
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  mob_sharesdk: 38b0e445a0a40d69d4646149b0381aa1c5f87e61
+  MOBFoundation: 5c13261385231ad1005f686d3a99406b8d9bfa14
+  MZTimerLabel: cd9bfb9304540ef2a9e163384fca9c978f0dbf83
+  NIMSDK_LITE: dceec3d418f97beb5d440c0df6a1ebe3bf6af111
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  Qiniu: 9d20cbf08a3bcf9d01869626f3c2a23a1b842f65
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SZTextView: 094dc6acc9beec537685c545d6e3e0d4975174e1
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  TYAlertController: c121090edb0bea7426f987da94cdddd81eef4231
+  TZImagePickerController: 36ca728ec681228918aa82e993aaab1962281b72
+  UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
+  UMCCommon: 0cb2629b93884531621100ed66ff2bca8b181f1f
+  UMCPush: 078b5818e0e47c4cf8ab42a5a30e8b54a0854077
+  WCDB.objc: 37749afdc03db1f905afb5cb833b641e980c085c
+  WCDBOptimizedSQLCipher: 9bceac087eff9625b151838d3a30364f53f71ad9
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: ab963da12c6a4a3a0b52820ae23e309689f95284
+
+COCOAPODS: 1.16.2

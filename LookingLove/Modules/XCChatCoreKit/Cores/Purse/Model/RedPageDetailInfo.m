@@ -1,0 +1,13 @@
+//
+//  RedPageDetailInfo.m
+//  BberryCore
+//
+//  Created by 卫明何 on 2017/9/23.
+//  Copyright © 2017年 chenran. All rights reserved.
+//
+
+#import "RedPageDetailInfo.h"
+
+@implementation RedPageDetailInfo
+
+@end

@@ -1,0 +1,18 @@
+//
+//  TTFamilyPersonViewController.h
+//  TuTu
+//
+//  Created by gzlx on 2018/11/2.
+//  Copyright © 2018年 YiZhuan. All rights reserved.
+//
+
+#import "BaseTableViewController.h"
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface TTFamilyPersonViewController : BaseTableViewController
+/** 家族的id*/
+@property (nonatomic, strong) NSString * familyId;
+@end
+
+NS_ASSUME_NONNULL_END

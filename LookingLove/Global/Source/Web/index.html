@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">
+	<title>一键上传歌曲</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<img src="images/header.png" alt="">
+		</div>
+		<div class="section">
+			<form method="post" action="index.html" enctype="multipart/form-data" accept-charset="utf-8">
+				<div class="uploadBtn">
+					<img src="images/button.png" alt="">	
+				</div>
+				<input type="file" name="upload" id="upload" accept="audio/mpeg" multiple>
+				<input type="submit" value="Submit" id="submit">
+			</form>
+			<div class="songList">
+				<div class="title"><span>歌曲列表</span></div>
+				<ul id="uploadingList">
+					<!-- <li>
+						<i class="attention"></i>
+						<p class="songName">马博-菊花爆满山.mp3</p>
+						<div class="progress">
+							<div class="bar"></div>
+						</div>
+					</li> -->
+				</ul>
+				<ul id="uploadingDone">
+					<!-- <li>
+						<i class="download"></i>
+						<p class="songName">马博-菊花爆满山.mp3</p>
+						<p class="songSize">4.40MB</p>
+						<i class="delete"></i>
+					</li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery.iframe-transport.js"></script>
+<script src="js/jquery.ui.widget.js"></script>
+<script src="js/jquery.fileupload.js"></script>
+
+<script src="js/index.js"></script>
+</html>

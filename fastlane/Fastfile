@@ -1,0 +1,294 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "2.28.3"
+
+default_platform :ios
+
+#声明
+
+APP_NAME = "LookingLove"
+WORKSPACE = "LookingLove.xcworkspace"
+SCHEME = "LookingLove"
+IPA_NAME = "#{APP_NAME}.ipa"
+START_DATE = Time.now.strftime('%Y-%m-%d %H:%M:%S %A')
+START_TIME = Time.now
+DSYMFILE = "#{APP_NAME}.app.dSYM.zip" # dsym符号表文件
+ENV_APPLESTORE = ""
+CONFIGURATION = "Debug"       # 默认是 Debug (可选 Release)
+EXPORT_METHOD = "development" # 默认是 development （可选 ad-hoc，app-store）
+OUTPUT_DIRECTORY = "./archive/#{CONFIGURATION}" # IPA 文件导出地址(符号表文件)
+
+platform :ios do
+  before_all do
+
+    def colorize(text, color_code)
+      "\e[#{color_code}m#{text}\e[0m"
+    end
+
+    def green(text); colorize(text, 32); end
+    def magenta(text); colorize(text, 35); end
+    def cyan(text); colorize(text, 36); end
+
+    desc "project TuTu archive debug ipa to fir"
+    puts "" + magenta("====== 🚀🚀 project TuTu archive debug ipa to fir 🚀🚀 ======") + ""
+    puts "" + green("====== 🚀🚀 打包开始的时间为: #{START_DATE} ==== 🚀🚀 ======") + ""
+
+  end
+
+  # debug 
+  desc "1. 发布iOS Dubug ipa 到 firim 网站"
+  lane :d do
+
+    CONFIGURATION = "Debug"
+    EXPORT_METHOD = "development"
+    archiveAction
+    # a(configuration: 'Debug', 
+    #   export_method: 'development',
+    #   app_id: "f80a6c7ccc",
+    #   app_key: "b3549e1a-11ae-40ed-8568-29b5b72c61a2",
+    #   channel: "Debug")
+  end
+
+  # release
+  desc "2. 发布iOS Release ipa 到 firim 网站"
+  lane :r do
+    CONFIGURATION = "Release"
+    archiveAction
+    # a(configuration: 'Release', 
+    #   export_method: 'ad-hoc',
+    #   app_id: "f80a6c7ccc",
+    #   app_key: "b3549e1a-11ae-40ed-8568-29b5b72c61a2",
+    #   channel: "Release")
+  end
+
+  # appstore
+  desc "3. 发布iOS Release ipa 到 苹果商店"
+  lane :store do
+
+    ENV_APPLESTORE = "Apple Store"
+    CONFIGURATION = "Release"
+    EXPORT_METHOD = "app-store" # 默认是 development （可选 ad-hoc，app-store）
+
+    archiveAction
+    # a(configuration: 'Release', 
+    #   export_method: 'app-store', 
+    #   app_id: "bf08dfb921",
+    #   app_key: "e80e6e30-e975-40e3-868e-8ffbe4dd0d5a", 
+    #   channel: "Release")
+
+  end
+
+  # archive
+  desc "4. 打包操作"
+  lane :archiveAction do
+
+  	#1. 开始前的一些操作，如代码更新(git_pull)
+
+    #git_pull # 拉取新代码
+    # cocoapods(repo_update:true)
+    #sh "pod update"
+
+    #自动增加build
+    updateProjectBuildNumber
+
+    # 开始时间
+    startDate = Time.now.strftime('%Y-%m-%d %H:%M:%S %A')
+    startTime = Time.now
+    puts "" + magenta("====== 🚀🚀 打包开始的时间为: #{startDate} ==== 🚀🚀 ======") + ""
+ 
+    #gym配置,打包输出。
+
+    #fastlane gym --export_method ad-hoc
+    #fastlane gym --export_method enterprise
+    #fastlane gym --export_method app-store
+    #清除上一次的ipa文件
+    #clean_ipafile
+    #导出路径 
+    # output_directory = "./archive/#{configuration}"
+    # 开始打包
+    gym(
+      # 指定打包所使用的输出方式，目前支持app-store, package, ad-hoc, enterprise, development
+      export_method: EXPORT_METHOD,     
+      export_xcargs: "-allowProvisioningUpdates",
+      workspace: WORKSPACE,
+      # 指定打包方式，Release 或者 Debug
+      configuration: CONFIGURATION,
+      # 指定scheme的名字
+      scheme: SCHEME,
+      # 是否清空以前的编译信息 true：是
+      clean:true,
+      # 指定输出文件夹，这里会保存我们最后生成的ipa文件
+      output_directory: OUTPUT_DIRECTORY,
+      # 输出的ipa名称
+      output_name: IPA_NAME
+     )
+
+    if ENV_APPLESTORE == "Apple Store"
+      #do Something
+      uploadAppleStore
+    else 
+      #do Otherthing
+      uploadToFirim
+    end
+
+    # 上传符号表
+    upload_dSYM
+
+    # 统计结束时间
+    endDate = Time.now.strftime('%Y-%m-%d %H:%M:%S %A')
+    endTime = Time.now
+
+    # 输出打包开始时间 和 结束时间
+    puts "" + magenta("====== 🚀🚀 打包执行开始的时间为: #{START_DATE} ==== 🚀🚀 ======") + ""
+    puts "" + magenta("====== 🚀🚀 打包执行结束的时间为: #{endDate} ==== 🚀🚀 ======") + ""
+
+    # 输出总用时
+    SECONDS = endTime - START_TIME
+    UI.message("执行完毕，用时" + cyan("#{SECONDS}") + "秒")
+    
+  end
+
+  # 上传到 firim 
+  desc "5. 执行上传操作"
+  lane :uploadToFirim do
+    puts "" + magenta("====== 🚀🚀 ==== 执行上传到 fir 的命令 ==== 🚀🚀 ======") + ""
+    
+    # 打包内容（change log）的提取和生成
+    changelog_from_git_commits(
+      # commit message 范围：自上次成功提交至当前最新提交
+      # between: [ENV['GIT_PREVIOUS_SUCCESSFUL_COMMIT'] || "HEAD^", "HEAD"],
+      commits_count: 5,
+      # 格式化，%s 代表 commit message，%an 代表提交人名
+      pretty: "\n - %s (%an)",
+      # 忽略 Merge 信息
+      merge_commit_filtering: 'exclude_merges',
+    )
+
+    # fir 的配置信息
+
+    ipaDownloadPwd = "1230" # 下载密码
+    appUpdateLog = "轻寻App #{CONFIGURATION} 版本更新了. \n 近期更新：#{lane_context[SharedValues::FL_CHANGELOG]}"
+
+    # firim(firim_api_token: "f3702bf3ca940b78fd758efeb4e6cb09", 
+    #     app_changelog: "#{appUpdateLog}", 
+    #     firim_api_url: "http://api.jappstore.com/", 
+    #           ipa:"#{OUTPUT_DIRECTORY}/#{IPA_NAME}",
+    #        app_passwd: "#{ipaDownloadPwd}") # 这里换成自己fir中的token即可
+
+
+    pgyer(update_description: "#{appUpdateLog}",
+             api_key: "58696d2dee66113ed3677eb62bfb4337",
+            user_key: "0bbbecf67c61a1c28561af835c92ae76", 
+                 ipa: "#{OUTPUT_DIRECTORY}/#{IPA_NAME}",
+          install_type: "2", #set install type for app (1=public, 2=password, 3=invite).
+            password: "#{ipaDownloadPwd}")
+
+    puts "" + magenta("====== 🚀🚀 ------ 上传到 fir 成功， 请查看 ------- 🚀🚀 ======") + ""
+
+  end
+
+  # 
+  desc "6. 发布到 Apple Store"
+  lane :uploadAppleStore do
+
+  deliver(force: false, skip_screenshots: true, skip_metadata: true)
+  puts "" + magenta("====== 🚀🚀 ------ 上传到 Apple Store 成功， 请查看 ------- 🚀🚀 ======") + ""
+
+  end
+
+  # 用于更新 App 的 build Num 的方法
+  desc "7. 用于更新 App 的 build Num 的方法"
+  lane :updateProjectBuildNumber do
+
+    # 获取当前时间
+    currentTime = Time.new.strftime("%Y%m%d")
+    # 获取当期版本号
+    build = get_build_number()
+
+    if build.include?"#{currentTime}"
+    # => 为当天版本 计算迭代版本号
+    lastStr = build[build.length-2..build.length-1]
+    lastNum = lastStr.to_i
+    lastNum = lastNum + 1
+    lastStr = lastNum.to_s
+
+    if lastNum < 10
+    lastStr = lastStr.insert(0,"0")
+    end
+    # 如果是当天的版本 格式为：2019122703 当天的年月日加上构建的次数 日期+build 
+    build = "#{currentTime}#{lastStr}"
+    else
+    # => 非当天版本 build 号重置
+    build = "#{currentTime}01"
+    end
+    UI.message("*************| " + magenta("更新 Build #{build}") + " |*************")
+    # => 更改项目 build 号
+    increment_build_number(
+    build_number: "#{build}"
+    )
+
+  end
+
+  desc "8. 上传符号表操作"
+  lane :upload_dSYM do
+    #上传符号表到 bugly
+  
+  bugly(app_id: "bf08dfb921", 
+        app_key: "e80e6e30-e975-40e3-868e-8ffbe4dd0d5a",
+        symbol_type: 2,
+        bundle_id: "com.wudoo.qingxun",
+        product_version: "1.3.2",
+        channel: CONFIGURATION,
+		dsym: "#{OUTPUT_DIRECTORY}/#{DSYMFILE}"
+        )
+
+  end
+
+  lane :resigh do
+
+    resign(
+      ipa: "#{OUTPUT_DIRECTORY}/#{IPA_NAME}", # can omit if using the `ipa` action
+      signing_identity: "Apple Distribution: fulong li (A5S48JU63A)",
+      provisioning_profile: "#{OUTPUT_DIRECTORY}/adhoc_qingxun.mobileprovision", # can omit if using the _sigh_ action
+      )
+  end
+
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    slack(
+      slack_url: "https://hooks.slack.com/services/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",
+      message: "Successfully deployed new App Update.",
+      payload: {"text": "{A very important thing has occurred! <https://fir.im/g9mv|Download> for details!"}
+      )
+  end
+
+  error do |lane, exception|
+    slack(
+      slack_url: "https://hooks.slack.com/services/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",
+      message: "打包失败了, 请查看原因",
+      success: false
+    )
+  end
+end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://docs.fastlane.tools/actions
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="00: Verifying fastlane version" time="0.000451">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="01: default_platform" time="0.00022">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="02: Switch to ios archiveAction lane" time="0.000179">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: Switch to ios updateProjectBuildNumber lane" time="0.0002">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: get_build_number" time="0.897744">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: increment_build_number" time="1.033452">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: gym" time="640.713271">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: Switch to ios uploadToFirim lane" time="0.000236">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: pgyer" time="72.989251">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: Switch to ios upload_dSYM lane" time="0.000253">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: slack" time="0.832876">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

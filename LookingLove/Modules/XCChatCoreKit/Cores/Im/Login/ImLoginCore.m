@@ -42,7 +42,9 @@
         if (env==DevType){
             [[NIMSDK sharedSDK] registerWithAppID:keyWithType(KeyType_NetEase, YES) cerName:keyWithType(KeyType_APNSCer, YES)];
         }else if (env==TestType){
-            [[NIMSDK sharedSDK] registerWithAppID:keyWithType(KeyType_NetEase, YES) cerName:keyWithType(KeyType_APNSCer, YES)];
+            NSString *key = keyWithType(KeyType_NetEase, YES);
+            NSString *c = keyWithType(KeyType_APNSCer, YES);
+            [[NIMSDK sharedSDK] registerWithAppID:key cerName:c];
         }else if (env==Pre_ReleaseType){
              [[NIMSDK sharedSDK] registerWithAppID:keyWithType(KeyType_NetEase, NO) cerName:keyWithType(KeyType_APNSCer, NO)];
         }else if (env==ReleaseType){
@@ -120,6 +122,7 @@
     NIMAutoLoginData *data = [[NIMAutoLoginData alloc] init];
     data.account = uid;
     data.token = token;
+    NSLog("uid:%@, token:%@", uid, token);
     data.forcedMode = NO;
     [[NIMSDK sharedSDK].loginManager autoLogin:data];
     [[NIMSDK sharedSDK].systemNotificationManager markAllNotificationsAsRead];
@@ -150,6 +153,7 @@
 #pragma -mark 云信sdk
 - (void)onLogin:(NIMLoginStep)step
 {
+    NSLog("===>onLogin step: %@", @(step));
     if (step == NIMLoginStepLoginOK) {
         //        [GetCore(PurseCore)isAuditing];
         self.isImLogined = YES;

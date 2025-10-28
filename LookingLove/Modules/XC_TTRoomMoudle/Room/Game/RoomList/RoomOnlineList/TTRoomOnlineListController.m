@@ -367,7 +367,9 @@ TTOpenNobleTipCardViewDelegate
         make.top.mas_equalTo(self.navBar.mas_bottom);
         
         if (@available(iOS 11.0, *)) {
-            make.left.right.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuide);
+            make.left.mas_equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.right.mas_equalTo(self.view.mas_safeAreaLayoutGuideRight);
+            make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
         } else {
             make.left.right.bottom.mas_equalTo(self.view);
         }

@@ -156,6 +156,10 @@
     [self onSpeakingUsersReport:speakers];
 }
 
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didOccurError:(AgoraErrorCode)errorCode {
+    NSLog("%@", @(errorCode));
+}
+
 
 - (void)rtcEngineLocalAudioMixingDidFinish:(AgoraRtcEngineKit *)engine{
     [self startPlayMusicAtIndex:(self.currentIndex + 1) % self.musicLists.count];
@@ -165,6 +169,7 @@
 //自己加入agora成功
 -(void)rtcEngine:(AgoraRtcEngineKit *)engine didJoinChannel:(NSString *)channel withUid:(NSUInteger)uid elapsed:(NSInteger)elapsed{
 
+    NSLog("");
 
 }
 
@@ -352,6 +357,9 @@
         [self.engine setAudioProfile:AgoraAudioProfileMusicStandard scenario:AgoraAudioScenarioChatRoomEntertainment];
     }
     int state = [self.engine joinChannelByToken:nil channelId:name info:nil uid:[[GetCore(AuthCore) getUid] integerValue] joinSuccess:^(NSString * _Nonnull channel, NSUInteger uid, NSInteger elapsed) {
+        
+        NSLog("==============%@", channel);
+        
     }];
     if (state != 0) {
         NotifyCoreClient(MeetingCoreClient, @selector(onJoinMeetingFailth), onJoinMeetingFailth);

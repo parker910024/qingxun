@@ -40,6 +40,7 @@
 		04A8307A22E8435F00E43724 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A8307822E8435F00E43724 /* LaunchScreen.storyboard */; };
 		04A8307D22E8435F00E43724 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A8307C22E8435F00E43724 /* main.m */; };
 		04CE694B22EA940900AC373A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04CE694A22EA940900AC373A /* StoreKit.framework */; };
+		12C8AC382EB50D490052DC50 /* HelloSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8AC372EB50D490052DC50 /* HelloSwift.swift */; };
 		182BB6BF25593108004EE740 /* WBGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182BB6BD25593108004EE740 /* WBGameView.m */; };
 		182BB6C4255BA125004EE740 /* NSArray+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 182BB6C3255BA125004EE740 /* NSArray+JSON.m */; };
 		189B01B625836D1300AA9ED3 /* RouterSkipCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B01B425836D1300AA9ED3 /* RouterSkipCenter.m */; };
@@ -2312,6 +2313,8 @@
 		04CE694A22EA940900AC373A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		121CF28B2EAB908200618C5C /* libWCDB.objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libWCDB.objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		121CF28D2EAB909B00618C5C /* libToast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libToast.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		12C8AC362EB50D490052DC50 /* LookingLove-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LookingLove-Bridging-Header.h"; sourceTree = "<group>"; };
+		12C8AC372EB50D490052DC50 /* HelloSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwift.swift; sourceTree = "<group>"; };
 		182BB6BD25593108004EE740 /* WBGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBGameView.m; sourceTree = "<group>"; };
 		182BB6BE25593108004EE740 /* WBGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBGameView.h; sourceTree = "<group>"; };
 		182BB6C2255BA124004EE740 /* NSArray+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSON.h"; sourceTree = "<group>"; };
@@ -6948,8 +6951,10 @@
 				044A6D1822E9882200C64D22 /* AppDelegate+UI.m */,
 				04A8306D22E8435D00E43724 /* AppDelegate.h */,
 				04A8306E22E8435D00E43724 /* AppDelegate.m */,
+				12C8AC372EB50D490052DC50 /* HelloSwift.swift */,
 				044A6D1E22E9882200C64D22 /* TTWKWebCrashConfig.h */,
 				044A6D1D22E9882200C64D22 /* TTWKWebCrashConfig.m */,
+				12C8AC362EB50D490052DC50 /* LookingLove-Bridging-Header.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -17975,6 +17980,7 @@
 				TargetAttributes = {
 					04A8306922E8435D00E43724 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1640;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 1;
@@ -18742,6 +18748,7 @@
 				C985703E25A40EC400FE8E6B /* RoomLoveModelSuccess.m in Sources */,
 				9B03EAC9250F53F20078713A /* NIMTeamNotifyUpdateViewController.m in Sources */,
 				9B03EAC3250F53F20078713A /* NIMTeamSwitchTableViewCell.m in Sources */,
+				12C8AC382EB50D490052DC50 /* HelloSwift.swift in Sources */,
 				9B03EADB250F53F20078713A /* NIMTextContentConfig.m in Sources */,
 				C91ABBE425A4445200DBA67A /* TTBlindDateResultView.m in Sources */,
 				9B03EAC4250F53F20078713A /* NIMTimePickerView.m in Sources */,
@@ -20441,6 +20448,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LookingLove/LookingLove.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -20492,6 +20500,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.x.av;
 				PRODUCT_NAME = "轻寻";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "LookingLove/Global/Delegate/LookingLove-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -20505,6 +20516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = LookingLove/LookingLove.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -20555,6 +20567,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.x.av;
 				PRODUCT_NAME = "轻寻";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "LookingLove/Global/Delegate/LookingLove-Bridging-Header.h";
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 				VERSIONING_SYSTEM = "apple-generic";

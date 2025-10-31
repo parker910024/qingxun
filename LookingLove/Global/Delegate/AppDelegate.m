@@ -64,6 +64,8 @@
 #import <DoraemonKit/DoraemonKit.h>
 #endif
 
+#import "轻寻-Swift.h"
+
 @interface AppDelegate ()<AuthCoreClient>
 @end
 

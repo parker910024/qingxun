@@ -83,7 +83,12 @@ TTMineEditPhotoCellDelegate
     [self.view addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         if (@available(iOS 11, *)) {
-            make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
+//            make.edges.equalTo(self.view.mas_safeAreaLayoutGuide);
+            make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+            make.right.equalTo(self.view.mas_safeAreaLayoutGuideRight);
+            make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+            
         } else {
             make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(64, 0, 0, 0));
         }

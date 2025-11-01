@@ -20454,7 +20454,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20220406;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 594WQMHH45;
+				DEVELOPMENT_TEAM = U2WW9J2T68;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -20497,7 +20497,7 @@
 					"$(PROJECT_DIR)/LookingLove/source/XCThirdPartyFrameworks/Libary",
 				);
 				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.feimiao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hello.x.vpn;
 				PRODUCT_NAME = "轻寻";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LookingLove/Global/Delegate/LookingLove-Bridging-Header.h";
@@ -20521,7 +20521,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 20220406;
-				DEVELOPMENT_TEAM = 594WQMHH45;
+				DEVELOPMENT_TEAM = U2WW9J2T68;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -20564,7 +20564,7 @@
 					"$(PROJECT_DIR)/LookingLove/source/XCThirdPartyFrameworks/Libary",
 				);
 				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.feimiao;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hello.x.vpn;
 				PRODUCT_NAME = "轻寻";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "LookingLove/Global/Delegate/LookingLove-Bridging-Header.h";
